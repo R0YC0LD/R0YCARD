@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R0YCARD – Sipariş Formu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-flex">
+      <div class="logo">R0YCARD</div>
+      <nav class="nav">
+        <a href="index.html">Ana Sayfa</a>
+      </nav>
+      <div class="nav-toggle" id="navToggle">
+        ☰
+      </div>
+    </div>
+  </header>
+
+  <section class="order-page">
+    <div class="container">
+      <h2 class="section-title scroll-fade">Sipariş Formu</h2>
+      <p class="section-subtitle scroll-fade">
+        Kartlara <strong>tek bir veri</strong> (örneğin tek bir link veya tek bir metin) yazılabilir.
+        Her kart için okutulduğunda hangi linkin açılacağını buradan belirleyebilirsin.
+      </p>
+
+      <form id="orderForm" class="order-form scroll-up">
+        <div class="order-grid">
+          <div>
+            <label for="cardCount">Kaç adet kart istiyorsun?</label>
+            <select id="cardCount" onchange="generateCardFields()">
+              <option value="1">1 Kart</option>
+              <option value="2">2 Kart</option>
+              <option value="3">3 Kart</option>
+              <option value="4">4 Kart</option>
+            </select>
+
+            <div id="cardDetails"></div>
+          </div>
+
+          <div>
+            <label for="customerName">Ad Soyad</label>
+            <input type="text" id="customerName" required>
+
+            <label for="customerEmail">E-posta</label>
+            <input type="email" id="customerEmail" required>
+
+            <div class="price-box">
+              <p>Kart Fiyatı: <strong>100 TL / adet</strong></p>
+              <p>Toplam Kart: <strong id="totalUnitsLabel">1</strong></p>
+              <p>Toplam Tutar: <strong id="totalPriceLabel">100 TL</strong></p>
+            </div>
+
+            <button class="btn primary" type="submit">Siparişi Gönder</button>
+            <p class="form-status" id="orderStatus"></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 2025 R0YCARD — Sipariş Sistemi
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
