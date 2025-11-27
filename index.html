@@ -1,153 +1,174 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>R0YCARD – Akıllı NFC Kart Çözümleri</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R0YCARD – Akıllı NFC Kartlar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">R0YCARD</div>
-            <nav class="nav">
-                <a href="#hero">Ana Sayfa</a>
-                <a href="#features">Özellikler</a>
-                <a href="#cards">Kartlar</a>
-                <a href="#contact" class="btn-nav">İletişim</a>
-            </nav>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-flex">
+      <div class="logo">R0YCARD</div>
+      <nav class="nav">
+        <a href="#hero">Ana Sayfa</a>
+        <a href="#features">Özellikler</a>
+        <a href="#cards">Kartlar</a>
+        <a href="#contact" class="btn-nav">İletişim</a>
+        <a href="order.html" class="btn-order">Sipariş Ver</a>
+      </nav>
+      <div class="nav-toggle" id="navToggle">
+        ☰
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-content scroll-fade">
+      <div class="hero-text">
+        <h1>Tek Dokunuşla <span>VIP Dijital Kimlik.</span></h1>
+        <p class="subtitle">
+          R0YCARD, NFC teknolojisiyle dijital kimliğini tek kartla taşımanı sağlar.
+          Premium görünüm, minimal tasarım ve tamamen kişiye özel içerik.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="order.html" class="btn primary">Sipariş Ver</a>
+          <a href="#features" class="btn outline">Daha Fazlası</a>
         </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero">
-        <div class="container hero-content scroll-fade">
-            <div class="hero-text">
-                <h1>Tek Dokunuşla <span>Profesyonelliği</span> Yanında Taşı.</h1>
-                <p class="subtitle">
-                    R0YCARD, dijital kimliğinizi NFC teknolojisiyle saniyeler içinde paylaşmanızı sağlar.
-                    Kurumsal, hızlı, modern ve tamamen kişiye özel.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn primary">Sipariş Ver</a>
-                    <a href="#features" class="btn outline">Daha Fazlası</a>
-                </div>
-            </div>
-
-            <div class="hero-img scroll-up">
-                <div class="nfc-card"></div>
-            </div>
+        <div class="hero-tags">
+          <span>⚡ NFC ile tek dokunuş</span>
+          <span>🎨 Tam kişiselleştirme</span>
+          <span>💼 Kurumsal imaj</span>
         </div>
-    </section>
+      </div>
 
-    <!-- FEATURES -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title scroll-fade">Neden R0YCARD?</h2>
-
-            <div class="features-grid">
-                <div class="feature-box scroll-up">
-                    <h3>⚡ Anında Paylaşım</h3>
-                    <p>Telefonu karta dokundur, tüm bağlantıların anında karşıya geçsin. Hızlı ve profesyonel.</p>
-                </div>
-
-                <div class="feature-box scroll-up">
-                    <h3>🎨 Kişiye Özel Tasarım</h3>
-                    <p>Kart tamamen sana özel hazırlanır. Logo, isim, renk paleti ve yazı tipi özgün olur.</p>
-                </div>
-
-                <div class="feature-box scroll-up">
-                    <h3>♻️ Tek Kart, Sonsuz Kullanım</h3>
-                    <p>Kağıt kartvizite para harcamayı bırak. Bir kez alırsın, ömür boyu kullanırsın.</p>
-                </div>
-
-                <div class="feature-box scroll-up">
-                    <h3>🔧 Kolay Güncelleme</h3>
-                    <p>Bilgilerin değiştiğinde kartı çöpe atmana gerek yok. Bağlantıyı tek tıkla güncelle.</p>
-                </div>
-            </div>
+      <div class="hero-img scroll-up">
+        <div class="nfc-card-3d" id="heroCard">
+          <div class="nfc-chip"></div>
+          <div class="nfc-brand">R0YCARD</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- PRODUCT SHOWCASE -->
-    <section id="cards" class="cards-section">
-        <div class="container">
-            <h2 class="section-title scroll-fade">Premium NFC Kart</h2>
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title scroll-fade">Neden R0YCARD?</h2>
+      <p class="section-subtitle scroll-fade">
+        Premium bir NFC kart ile kartvizit algısını bambaşka bir seviyeye taşı.
+      </p>
 
-            <div class="card-showcase scroll-up">
-                <div class="demo-card"></div>
-
-                <div class="card-info">
-                    <h3>Mat Siyah • Ultra Şık</h3>
-                    <p>
-                        Parmak izi tutmayan, mat yüzeyli premium siyah R0YCARD.
-                        Her ortama uyum sağlayan minimalist tasarım.
-                    </p>
-
-                    <ul>
-                        <li>Mat siyah yüzey</li>
-                        <li>Yuvarlatılmış köşeler</li>
-                        <li>Kişiye özel baskı</li>
-                        <li>Yüksek hızlı NFC çip</li>
-                    </ul>
-
-                    <a href="#contact" class="btn primary">Sipariş Ver</a>
-                </div>
-            </div>
+      <div class="features-grid">
+        <div class="feature-box scroll-up">
+          <h3>⚡ Anında Paylaşım</h3>
+          <p>
+            Kartı NFC destekli telefona yaklaştır, tek tıkla profil, site veya istediğin link açılsın.
+          </p>
         </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title scroll-fade">İletişime Geç</h2>
-
-            <div class="contact-grid">
-                <div class="contact-info scroll-up">
-                    <p>Sipariş ve bilgi almak için Instagram DM veya e-posta yoluyla iletişime geçebilirsin:</p>
-
-                    <ul>
-                        <li><strong>Instagram:</strong> @R0YCARD</li>
-                        <li><strong>E-posta:</strong> by599296@gmail.com</li>
-                    </ul>
-                </div>
-
-                <form class="contact-form scroll-up">
-                    <input type="text" placeholder="Ad Soyad">
-                    <input type="email" placeholder="E-posta">
-                    <textarea placeholder="Mesajın"></textarea>
-
-                    <button class="btn primary">Gönder</button>
-                </form>
-            </div>
+        <div class="feature-box scroll-up">
+          <h3>🎨 Kişiye Özel Tasarım</h3>
+          <p>
+            Kartın görünümü ve içerdiği veri (örneğin tek bir link veya metin) tamamen sana özel belirlenir.
+          </p>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            © 2025 R0YCARD — Akıllı NFC Kart Teknolojileri
+        <div class="feature-box scroll-up">
+          <h3>♻️ Tek Kart, Sonsuz Kullanım</h3>
+          <p>
+            Kağıt kartvizit devrini kapat. Tek kartla, sınırsız kez paylaşım yap.
+          </p>
         </div>
-    </footer>
 
-    <!-- SCROLL ANIMATION SCRIPT -->
-    <script>
-        const scrollElements = document.querySelectorAll(".scroll-up, .scroll-fade");
+        <div class="feature-box scroll-up">
+          <h3>💼 Kurumsal İmaj</h3>
+          <p>
+            Minimal mat siyah tasarım, iş görüşmelerinde ve sosyal ortamlarda premium bir izlenim bırakır.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        }, { threshold: 0.15 });
+  <!-- CARDS / PRODUCT -->
+  <section id="cards" class="cards-section">
+    <div class="container">
+      <h2 class="section-title scroll-fade">Mat Siyah Premium NFC Kart</h2>
+      <p class="section-subtitle scroll-fade">
+        İçine tek bir veri (örneğin bir link, WhatsApp numarası veya profil URL’i) yazılan, mat siyah, minimalist NFC kart.
+      </p>
 
-        scrollElements.forEach((el) => scrollObserver.observe(el));
-    </script>
+      <div class="card-showcase scroll-up">
+        <div class="demo-card-3d">
+          <div class="demo-layer demo-front"></div>
+          <div class="demo-layer demo-shadow"></div>
+        </div>
 
+        <div class="card-info">
+          <h3>Özellikler</h3>
+          <ul>
+            <li>Mat siyah, parmak izi göstermeyen yüzey</li>
+            <li>Yuvarlatılmış köşe, kartvizit boyutu</li>
+            <li>Kart başına tek bir veri (URL, numara veya kısa metin)</li>
+            <li>Hızlı NFC okuma, modern cihazlarla uyumlu</li>
+          </ul>
+
+          <p class="card-price">
+            Kart Fiyatı: <strong>100 TL / adet</strong>
+          </p>
+
+          <a href="order.html" class="btn primary">Sipariş Sayfasına Git</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title scroll-fade">İletişime Geç</h2>
+      <p class="section-subtitle scroll-fade">
+        Aklına takılan her şey için bizimle iletişime geçebilirsin. Sipariş dışı soruların için bu formu kullan.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info scroll-up">
+          <ul>
+            <li><strong>Instagram:</strong> @R0YCARD</li>
+            <li><strong>E-posta:</strong> by599296@gmail.com</li>
+          </ul>
+          <p>
+            Formu doldurduğunda mesajın otomatik olarak e-posta olarak bize iletilir.
+          </p>
+        </div>
+
+        <form id="contactForm" class="contact-form scroll-up">
+          <input type="text" id="name" placeholder="Ad Soyad" required>
+          <input type="email" id="email" placeholder="E-posta" required>
+          <textarea id="message" placeholder="Mesajın" required></textarea>
+          <button class="btn primary" type="submit">Mesajı Gönder</button>
+          <p class="form-status" id="contactStatus"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      © 2025 R0YCARD — Akıllı NFC Kart Teknolojileri
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
